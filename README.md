@@ -1,20 +1,22 @@
-# csv-parser [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# sh-csv-parser
 > Streaming CSV parser with Strategy support
 
 
 ## Install
 
 ```sh
-$ npm install --save csv-parser
+$ npm install --save sh-csv-parser
 ```
 
 
 ## Usage
 
 ```js
-var csvParser = require('csv-parser');
+var csvParser = require('sh-csv-parser');
 
-csvParser('Rainbow');
+fs.readFile('mycsv.csv')
+  .pipe(new csvParser())
+  .end();
 ```
 
 ## License
