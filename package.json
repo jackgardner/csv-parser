@@ -1,0 +1,45 @@
+{
+  "name": "sh-csv-parser",
+  "version": "0.0.0",
+  "description": "Streaming CSV parser with Strategy support",
+  "homepage": "",
+  "author": {
+    "name": "Jack Gardner",
+    "email": "stonefeet@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "csv"
+  ],
+  "private": true,
+  "repository": "git@bitbucket.org:advanceglobalcap/csv-parser.git",
+  "dependencies" : {
+    "generate-function": "^1.0.1",
+    "generate-object-property": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.5.0",
+    "babel-preset-es2015": "^6.0.15",
+    "chai": "^3.4.0",
+    "del": "^2.0.2",
+    "gulp": "^3.6.0",
+    "gulp-babel": "^5.3.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "isparta": "^3.0.3"
+
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
