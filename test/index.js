@@ -2,6 +2,8 @@ import chai from 'chai';
 import {CSVParser} from '../lib';
 import fs from 'fs';
 import path from 'path';
+import MockParsingStrategy from './mockParsingStrategy';
+
 
 const read = fs.createReadStream;
 const expect = chai.expect;
@@ -45,6 +47,20 @@ describe('csv-parser', function () {
       expect(lines[1]).to.deep.equal({a: 'Once upon\na time', b: '5', c: '6' });
       expect(lines[2]).to.deep.equal({a: '7', b: '8', c: '9' });
 
+      done();
+    }
+
+  });
+
+  it('supports strategies', function (done) {
+
+    collect('invoinet.csv', { strategy: MockParsingStrategy, headerSeparator: '\t' }, verify);
+    function verify(err, lines) {
+      expect(err).to.equal(false);
+      expect(lines[0].headers).to.have.length(16);
+      expect(lines[4].Amount).to.equal("276.00");
+      expect(lines[4]['Discounted Amount']).to.equal("269.97");
+      expect(lines).to.have.length(40);
       done();
     }
 
