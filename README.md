@@ -19,6 +19,11 @@ fs.readFile('mycsv.csv')
   .end();
 ```
 
+## Developing
+
+```sh
+$ npm test
+```
 ## License
 
 MIT © [Jack Gardner]()
