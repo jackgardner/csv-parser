@@ -17,9 +17,9 @@ require('babel-core/register');
 gulp.task('static', function () {
   return gulp.src('**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(eslint());
+   // .pipe(eslint.format())
+   // .pipe(eslint.failAfterError());
 });
 
 gulp.task('nsp', function (cb) {

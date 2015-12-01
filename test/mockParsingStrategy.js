@@ -21,7 +21,7 @@ export default {
     preParse: function (line) {
       let currencyRegex = new RegExp(/(?:[,])([\d]{2,}),([\d]{2})/g);
       line = line.replace(currencyRegex, ',"$1.$2"');
-      
+
       return line;
     }
   }
